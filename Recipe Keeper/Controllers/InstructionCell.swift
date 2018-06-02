@@ -31,7 +31,7 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     
     
     
-
+    
     @IBOutlet weak var timer: UIButton!
     @IBOutlet weak var StepTag: UIView!
     @IBOutlet weak var StepDescription: UILabel!
@@ -40,6 +40,8 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
         Action.isSelected = !Action.isSelected
         //item?.status = Action.isSelected
     }
+    
+    
     
     /*
      how to make count down timer and send alert
@@ -58,7 +60,13 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
         willSet(newValue) {
             if newValue {
                 countdown = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(self.updateTimer), userInfo: nil, repeats: true)
+                //add DidEnterBackground listener
+                NotificationCenter.default.addObserver(self, selector: #selector(didenterBackground), name: Notification.Name.UIApplicationDidEnterBackground, object: nil)
+                
+                //add DidBecomeActive listener
+                NotificationCenter.default.addObserver(self, selector: #selector(didBecomeActive), name: Notification.Name.UIApplicationDidBecomeActive, object: nil)
             } else {
+                
                 countdown?.invalidate()
                 countdown = nil
             }
@@ -67,9 +75,10 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     
     var countdown: Timer?
     
-   @objc func updateTimer(_ timer: Timer) {
+    @objc func updateTimer(_ timer: Timer) {
         remainingSeconds -= 1
         if remainingSeconds <= 0 {
+            NotificationCenter.default.removeObserver(self)
             self.isCounting = false
             self.timer.setTitle("00:00", for: [])
             self.remainingSeconds = 0
@@ -80,12 +89,11 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
             }
             alertController.addAction(okAction)
             parentViewController?.present(alertController, animated: true, completion: nil)
-            MTSystemSound.playSystemSound(audioID: .alarm)
-          
+            
         }
     }
     
-
+    
     
     @IBAction func startTimer(_ sender: Any) {
         print(timer.tag)
@@ -141,12 +149,45 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
-         remainingSeconds = 0
-         self.timer.setTitle("00:00", for: [])
+        remainingSeconds = 0
+        self.timer.setTitle("00:00", for: [])
         
     }
     
     
+    
+    
+    
+    @objc func didenterBackground(){
+        saveCurrentTime()
+    }
+    
+    @objc func didBecomeActive(){
+        loadLastRunTime()
+    }
+    
+    func saveCurrentTime(){
+        let stopRunTime = Date()
+        print(stopRunTime)
+        UserDefaults.standard.set(stopRunTime, forKey: "stopRunTime")
+        
+    }
+    
+    func loadLastRunTime(){
+        let lastRunTime = UserDefaults.standard.object(forKey: "stopRunTime")
+        if lastRunTime != nil{
+            let stopRunTime = lastRunTime as! Date
+            let different = stopRunTime.timeIntervalSince(Date())
+            print("different \(Int(different))")
+            if(remainingSeconds+Int(different)<0){
+                remainingSeconds = 0
+            }else{
+                remainingSeconds += Int(different)
+            }
+            
+        }
+        
+    }
     
     
     
@@ -161,14 +202,14 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-       
+        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(false, animated: false)
         
-
-    
+        
+        
         
         
         
@@ -176,4 +217,8 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
         // Configure the view for the selected state
     }
     
+    
+    
+    
 }
+
