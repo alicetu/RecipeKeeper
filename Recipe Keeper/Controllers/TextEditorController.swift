@@ -58,6 +58,7 @@ class TextEditorController: UIViewController, UITableViewDelegate, UITableViewDa
         }
         
         originalPosition = userInputView.frame.origin.y
+        print(originalPosition)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(AddRecipeController.tapDetected))
         view.addGestureRecognizer(tap)
@@ -80,11 +81,11 @@ class TextEditorController: UIViewController, UITableViewDelegate, UITableViewDa
             else {
                 if keyboardSize.height == offset.height {
                     UIView.animate(withDuration: 0.1, animations: { () -> Void in
-                        self.userInputView.frame.origin.y = self.originalPosition - keyboardSize.height
+                        self.userInputView.frame.origin.y = self.originalPosition - keyboardSize.height - 40.0
                     })
                 } else {
                     UIView.animate(withDuration: 0.1, animations: { () -> Void in
-                        self.userInputView.frame.origin.y = self.originalPosition - offset.height
+                        self.userInputView.frame.origin.y = self.originalPosition - offset.height - 40.0
                     })
                 }
             }
@@ -94,7 +95,7 @@ class TextEditorController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @objc func keyboardWillHide(notification: NSNotification) {
         if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue {
-            userInputView.frame.origin.y = originalPosition
+            userInputView.frame.origin.y = originalPosition - 100.0
             print(keyboardSize.height)
             print(self.userInputView.frame.origin.y)
         }

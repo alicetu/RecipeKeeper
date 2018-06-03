@@ -320,7 +320,7 @@ Swipe left on ingredients or instruction that you want to delete to remove them<
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="fel-0g-HHE">
-                                <rect key="frame" x="0.0" y="64" width="375" height="403"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="404"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" textLabel="Zan-EI-EMk" style="IBUITableViewCellStyleDefault" id="ECF-zS-Bnn">
@@ -344,7 +344,7 @@ Swipe left on ingredients or instruction that you want to delete to remove them<
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Dhx-94-Y7F" userLabel="InputView">
-                                <rect key="frame" x="0.0" y="467" width="375" height="200"/>
+                                <rect key="frame" x="0.0" y="468" width="375" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Description" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ig8-Vi-OT2" userLabel="Step Description Label">
                                         <rect key="frame" x="10" y="20" width="127.5" height="21"/>
@@ -388,7 +388,7 @@ Swipe left on ingredients or instruction that you want to delete to remove them<
                                 <constraints>
                                     <constraint firstItem="cID-NL-b2b" firstAttribute="top" secondItem="Dhx-94-Y7F" secondAttribute="top" constant="20" id="18w-bF-hYV"/>
                                     <constraint firstItem="V1K-e6-qV2" firstAttribute="top" secondItem="Ig8-Vi-OT2" secondAttribute="bottom" constant="10" id="7Rv-WG-MlR"/>
-                                    <constraint firstAttribute="height" constant="200" id="DJJ-wS-oBO"/>
+                                    <constraint firstAttribute="height" constant="150" id="DJJ-wS-oBO"/>
                                     <constraint firstItem="xdW-x7-Mca" firstAttribute="width" secondItem="cID-NL-b2b" secondAttribute="width" id="F8A-SC-rR5"/>
                                     <constraint firstItem="V1K-e6-qV2" firstAttribute="trailing" secondItem="cID-NL-b2b" secondAttribute="leading" constant="-20" id="OKo-7T-Udo"/>
                                     <constraint firstItem="xdW-x7-Mca" firstAttribute="top" secondItem="cID-NL-b2b" secondAttribute="bottom" constant="10" id="S77-Je-AyW"/>
@@ -411,7 +411,7 @@ Swipe left on ingredients or instruction that you want to delete to remove them<
                             <constraint firstItem="Dhx-94-Y7F" firstAttribute="top" secondItem="fel-0g-HHE" secondAttribute="bottom" id="COB-Ih-JEd"/>
                             <constraint firstItem="fel-0g-HHE" firstAttribute="leading" secondItem="Dhx-94-Y7F" secondAttribute="leading" id="Haa-80-LSV"/>
                             <constraint firstItem="fel-0g-HHE" firstAttribute="centerX" secondItem="UnL-y2-MV4" secondAttribute="centerX" id="aEc-wg-D8h"/>
-                            <constraint firstItem="Dhx-94-Y7F" firstAttribute="bottom" secondItem="KGU-7W-YfK" secondAttribute="bottom" id="aOg-Um-Ekt"/>
+                            <constraint firstItem="Dhx-94-Y7F" firstAttribute="bottom" secondItem="UnL-y2-MV4" secondAttribute="bottom" id="aOg-Um-Ekt"/>
                             <constraint firstItem="fel-0g-HHE" firstAttribute="top" secondItem="KGU-7W-YfK" secondAttribute="topMargin" id="alF-a8-z8k"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="UnL-y2-MV4"/>
