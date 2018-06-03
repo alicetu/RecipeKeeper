@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -50,25 +49,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UG9-8f-Rck" userLabel="Action area">
                                 <rect key="frame" x="325.5" y="0.0" width="29.5" height="43.5"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9wH-dH-dhb">
-                                        <rect key="frame" x="0.0" y="7.5" width="29.5" height="29"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" secondItem="9wH-dH-dhb" secondAttribute="width" multiplier="1:1" id="glW-5N-QhP"/>
-                                        </constraints>
-                                        <state key="normal" backgroundImage="Unchecked"/>
-                                        <state key="selected" backgroundImage="Checked"/>
-                                        <connections>
-                                            <action selector="actionButtonTapped:" destination="Uyr-We-9yl" eventType="touchUpInside" id="TJY-aA-sdr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstItem="9wH-dH-dhb" firstAttribute="centerX" secondItem="UG9-8f-Rck" secondAttribute="centerX" id="JC4-74-OSP"/>
-                                    <constraint firstItem="9wH-dH-dhb" firstAttribute="centerY" secondItem="UG9-8f-Rck" secondAttribute="centerY" id="d72-LK-oJg"/>
-                                    <constraint firstItem="9wH-dH-dhb" firstAttribute="width" secondItem="UG9-8f-Rck" secondAttribute="width" id="vAm-me-R01"/>
-                                </constraints>
                             </view>
                         </subviews>
                         <constraints>
@@ -88,15 +69,10 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="Action" destination="9wH-dH-dhb" id="YZL-8G-veO"/>
                 <outlet property="IngredientDescription" destination="i6z-PE-cII" id="Jin-TV-jNd"/>
                 <outlet property="IngredientTag" destination="fOi-Y4-PFV" id="cGD-5S-QoO"/>
             </connections>
             <point key="canvasLocation" x="-33.5" y="-223"/>
         </tableViewCell>
     </objects>
-    <resources>
-        <image name="Checked" width="44" height="44"/>
-        <image name="Unchecked" width="44" height="44"/>
-    </resources>
 </document>

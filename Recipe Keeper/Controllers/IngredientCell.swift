@@ -12,12 +12,6 @@ class IngredientCell: UITableViewCell {
     
     @IBOutlet weak var IngredientTag: UIView!
     @IBOutlet weak var IngredientDescription: UILabel!
-    @IBOutlet weak var Action: UIButton!
-    
-    @IBAction func actionButtonTapped(_ sender: Any) {
-        Action.isSelected = !Action.isSelected
-        actionState = Action.isSelected
-    }
     
     var item: String? {
         didSet {
@@ -36,12 +30,6 @@ class IngredientCell: UITableViewCell {
         }
     }
     
-    var actionState: Bool? {
-        didSet{
-            Action.isSelected = actionState!
-        }
-    }
-    
     static var nib:UINib {
         return UINib(nibName: identifier, bundle: nil)
     }
@@ -56,7 +44,7 @@ class IngredientCell: UITableViewCell {
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: false)
         
         // Configure the view for the selected state
     }

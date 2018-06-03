@@ -20,26 +20,18 @@ extension UIView {
         while parentResponder != nil {
             parentResponder = parentResponder!.next
             if parentResponder is UIViewController {
-                return parentResponder as! UIViewController!
+                return parentResponder as! UIViewController?
             }
         }
         return nil
     }
 }
 
-class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
-    
-    
-    
-    
+class InstructionCell: UITableViewCell, UNUserNotificationCenterDelegate {
     @IBOutlet weak var timer: UIButton!
     @IBOutlet weak var StepTag: UIView!
     @IBOutlet weak var StepDescription: UILabel!
     @IBOutlet weak var Action: UIButton!
-    @IBAction func actionButtonTapped(_ sender: Any) {
-        Action.isSelected = !Action.isSelected
-        //item?.status = Action.isSelected
-    }
     
     
     
@@ -50,9 +42,14 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     
     var remainingSeconds: Int = 0 {
         willSet(newSeconds) {
-            let mins = newSeconds/60
-            let seconds = newSeconds%60
-            self.timer.setTitle("\(mins):\(seconds)", for: [])
+            let mins = newSeconds / 60
+            let seconds = newSeconds % 60
+            // display leading 0 for 1-9 seconds
+            if seconds < 10 {
+                self.timer.setTitle("\(mins):0\(seconds)", for: [])
+            } else {
+                self.timer.setTitle("\(mins):\(seconds)", for: [])
+            }
         }
     }
     
@@ -80,10 +77,10 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
         if remainingSeconds <= 0 {
             NotificationCenter.default.removeObserver(self)
             self.isCounting = false
-            self.timer.setTitle("00:00", for: [])
+            self.timer.setTitle("Restart", for: [])
             self.remainingSeconds = 0
-            let alertController = UIAlertController(title: "Timer", message: "count down over!", preferredStyle: UIAlertControllerStyle.alert)
-            let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.default) {
+            let alertController = UIAlertController(title: "Step Timer", message: "Your step is done!", preferredStyle: UIAlertControllerStyle.alert)
+            let okAction = UIAlertAction(title: "Close", style: UIAlertActionStyle.default) {
                 (result : UIAlertAction) -> Void in
                 print("OK")
             }
@@ -100,10 +97,10 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
         timer.setImage(nil, for: [])
         remainingSeconds = timer.tag * 60
         isCounting = !isCounting
-        timer.setTitleColor(UIColor.blue, for: [])
+        timer.setTitleColor(UIColor.darkGray, for: [])
         let content = UNMutableNotificationContent()
-        content.title = "Timer"
-        content.body = "count down over!"
+        content.title = "Step Timer"
+        content.body = "Your step is done!"
         content.sound = UNNotificationSound(named: "alarm.mp3")
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: Double(timer.tag * 60),
                                                         repeats: false)
@@ -150,8 +147,8 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         remainingSeconds = 0
-        self.timer.setTitle("00:00", for: [])
-        
+        self.timer.setImage(UIImage(imageLiteralResourceName: "Timer"), for: [])
+        self.timer.setTitle("", for: [])
     }
     
     
@@ -179,7 +176,7 @@ class InstructionCell: UITableViewCell,UNUserNotificationCenterDelegate {
             let stopRunTime = lastRunTime as! Date
             let different = stopRunTime.timeIntervalSince(Date())
             print("different \(Int(different))")
-            if(remainingSeconds+Int(different)<0){
+            if(remainingSeconds + Int(different)<0){
                 remainingSeconds = 0
             }else{
                 remainingSeconds += Int(different)

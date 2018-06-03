@@ -47,14 +47,12 @@ class RecipeController: UITableViewController {
     
     
     override func numberOfSections(in tableView: UITableView) -> Int {
-        print(items.count)
         return items.count
         
     }
     
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        print(items[section].rowCount)
         return items[section].rowCount
         
     }
@@ -74,7 +72,6 @@ class RecipeController: UITableViewController {
                 let ingredient = item.ingredients[indexPath.row]
                 cell.item = ingredient
                 cell.stepNumber = indexPath.row
-                print(ingredient)
                 return cell
             }
             

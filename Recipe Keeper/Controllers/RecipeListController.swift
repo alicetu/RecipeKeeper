@@ -17,18 +17,20 @@ class RecipeListController: UITableViewController, UISearchResultsUpdating {
     var recipes: [Recipe] = []
     
     let searchController = UISearchController(searchResultsController: nil)
+    
     @IBAction func unwindToRecipeList(_ unwindSegue: UIStoryboardSegue) {
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        // Format table view
         tableView.estimatedRowHeight = 0
-        
+        // Set up search controller
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         tableView.tableHeaderView = searchController.searchBar
-        searchController.searchBar.barTintColor = UIColor(red: 236/255.0, green: 195/255.0, blue: 11/255.0, alpha: 1)
+        searchController.searchBar.barTintColor = UIColor.MyTheme.yellow
 
 
         // Uncomment the following line to preserve selection between presentations
@@ -60,6 +62,24 @@ class RecipeListController: UITableViewController, UISearchResultsUpdating {
         recipes = []
         var tempRecipes = [Recipe]()
         let realm = try! Realm()
+        
+        let demoIngredients = List<String>()
+        let demoInstructions = List<Step>()
+        let sampleIngredients = ["4 tablespoons self-raising flour", "4 tablespoons white sugar", "2 tablespoons Milo (or other chocolate powder)", "1 large egg, lightly beaten", "2 tablespoons full-cream milk", "2 tablespoons vegetable oil"]
+        for ingredient in sampleIngredients {
+            demoIngredients.append(ingredient)
+        }
+        let sampleInstructions = [Step(description: "Combine flour, sugar and milo in a large coffee mug.", needTimer: false, timer: 0), Step(description: "Add egg, milk and oil. Mix until smooth. Microwave on high for 3 and a half minutes. (Put a small plate underneath the mug to prevent mess if cake over-flows)", needTimer: true, timer: 3), Step(description: "Serve in the mug with ice-cream.", needTimer: false, timer: 0)]
+        
+        for instruction in sampleInstructions {
+            demoInstructions.append(instruction)
+        }
+        
+        let demoRecipe = Recipe(name: "Milo mug cake", time: 5, cuisine: "Australian", ingredients: demoIngredients, instruction: demoInstructions)
+        try! realm.write {
+            realm.add(demoRecipe, update: true)
+        }
+        
         var results: Results<Recipe>!
         if isSearching(){
             results = realm.objects(Recipe.self).filter("name CONTAINS[cd] %@",searchController.searchBar.text!)

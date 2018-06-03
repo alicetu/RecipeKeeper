@@ -47,7 +47,6 @@ class EstimateTimeCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewDataS
         selectedTime = timePickerData[row]
         let selected = formatTime(time: timePickerData[row])
         estimatedTime.text = selected
-        self.endEditing(true)
     }
     
     var time: Int? {
