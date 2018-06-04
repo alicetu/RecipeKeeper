@@ -1,4 +1,4 @@
-# Recepie Keeper
+# Recipe Keeper
 
 ## About
 
