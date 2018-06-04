@@ -7,7 +7,8 @@ Recepie Keeper application is the mobile application where users can store their
 
 ### App intro video
 
-TODO
+An intro video for the Recepie Keeper is available at:
+https://vimeo.com/273247030
 
 ## Authors
 
