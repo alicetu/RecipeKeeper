@@ -7,17 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0140E6B820B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6B720B0682000699CE3 /* AddRecipeIngredientHeaderView.xib */; };
-		0140E6B920B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6B720B0682000699CE3 /* AddRecipeIngredientHeaderView.xib */; };
-		0140E6BA20B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6B720B0682000699CE3 /* AddRecipeIngredientHeaderView.xib */; };
-		0140E6BC20B06C6D00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6BB20B06B1600699CE3 /* AddRecipeInstructionHeaderView.xib */; };
-		0140E6BD20B06C6E00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6BB20B06B1600699CE3 /* AddRecipeInstructionHeaderView.xib */; };
-		0140E6BE20B06C6E00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6BB20B06B1600699CE3 /* AddRecipeInstructionHeaderView.xib */; };
 		0140E6C020B0717C00699CE3 /* TextEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140E6BF20B0717C00699CE3 /* TextEditorController.swift */; };
 		0140E6C420B0A63900699CE3 /* FilterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140E6C320B0A63900699CE3 /* FilterController.swift */; };
-		0140E6C820B0A71100699CE3 /* GrayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6C720B0A71100699CE3 /* GrayHeaderView.xib */; };
-		0140E6C920B0A71100699CE3 /* GrayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6C720B0A71100699CE3 /* GrayHeaderView.xib */; };
-		0140E6CA20B0A71100699CE3 /* GrayHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0140E6C720B0A71100699CE3 /* GrayHeaderView.xib */; };
 		0140E6CC20B0AE4000699CE3 /* SelectlessTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0140E6CB20B0AE4000699CE3 /* SelectlessTableViewCell.swift */; };
 		0F10D01F541FE8C5B3B331C9 /* Pods_Reciper_KeeperUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 85CD1FA19B750D58C83AF0F0 /* Pods_Reciper_KeeperUITests.framework */; };
 		4641BCD6C94363AD1AAC2228 /* Pods_Reciper_KeeperTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 56E4878422732BCFBD95A226 /* Pods_Reciper_KeeperTests.framework */; };
@@ -25,6 +16,8 @@
 		5811F0C620B282E900F50CA9 /* RecipeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811F0C520B282E900F50CA9 /* RecipeViewModel.swift */; };
 		5811F0C820B2831F00F50CA9 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811F0C720B2831F00F50CA9 /* Recipe.swift */; };
 		5811F0CA20B2849100F50CA9 /* IngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5811F0C920B2849100F50CA9 /* IngredientCell.swift */; };
+		581F76CC20C3908B00316D81 /* PickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F76CB20C3908B00316D81 /* PickerTextField.swift */; };
+		581F76CE20C3EAD000316D81 /* NumberTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 581F76CD20C3EAD000316D81 /* NumberTextView.swift */; };
 		58576FD220B280C8008E569D /* IngredientCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 58576FD120B280C8008E569D /* IngredientCell.xib */; };
 		5880F66620A3D84F00FA5395 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880F66520A3D84F00FA5395 /* AppDelegate.swift */; };
 		5880F66A20A3D84F00FA5395 /* AccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5880F66920A3D84F00FA5395 /* AccountController.swift */; };
@@ -75,11 +68,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0140E6B720B0682000699CE3 /* AddRecipeIngredientHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecipeIngredientHeaderView.xib; sourceTree = "<group>"; };
-		0140E6BB20B06B1600699CE3 /* AddRecipeInstructionHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddRecipeInstructionHeaderView.xib; sourceTree = "<group>"; };
 		0140E6BF20B0717C00699CE3 /* TextEditorController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextEditorController.swift; sourceTree = "<group>"; };
 		0140E6C320B0A63900699CE3 /* FilterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterController.swift; sourceTree = "<group>"; };
-		0140E6C720B0A71100699CE3 /* GrayHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = GrayHeaderView.xib; sourceTree = "<group>"; };
 		0140E6CB20B0AE4000699CE3 /* SelectlessTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectlessTableViewCell.swift; sourceTree = "<group>"; };
 		046802C6A8D743AFDAEE6926 /* Pods-Reciper Keeper.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciper Keeper.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reciper Keeper/Pods-Reciper Keeper.release.xcconfig"; sourceTree = "<group>"; };
 		127EB3E3E9037052B7EC0293 /* Pods-Reciper KeeperUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciper KeeperUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Reciper KeeperUITests/Pods-Reciper KeeperUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -91,6 +81,8 @@
 		5811F0C520B282E900F50CA9 /* RecipeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeViewModel.swift; sourceTree = "<group>"; };
 		5811F0C720B2831F00F50CA9 /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		5811F0C920B2849100F50CA9 /* IngredientCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientCell.swift; sourceTree = "<group>"; };
+		581F76CB20C3908B00316D81 /* PickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerTextField.swift; sourceTree = "<group>"; };
+		581F76CD20C3EAD000316D81 /* NumberTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberTextView.swift; sourceTree = "<group>"; };
 		58576FD120B280C8008E569D /* IngredientCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientCell.xib; sourceTree = "<group>"; };
 		5880F66220A3D84F00FA5395 /* Reciper Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Reciper Keeper.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5880F66520A3D84F00FA5395 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -191,6 +183,8 @@
 				5811F0C520B282E900F50CA9 /* RecipeViewModel.swift */,
 				58F8F21620B308A800208A05 /* AddViewModel.swift */,
 				5880F69D20A8699300FA5395 /* BrandColor.swift */,
+				581F76CB20C3908B00316D81 /* PickerTextField.swift */,
+				581F76CD20C3EAD000316D81 /* NumberTextView.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,9 +192,6 @@
 		305D62C420B1B8DD0026A6E3 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				0140E6BB20B06B1600699CE3 /* AddRecipeInstructionHeaderView.xib */,
-				0140E6B720B0682000699CE3 /* AddRecipeIngredientHeaderView.xib */,
-				0140E6C720B0A71100699CE3 /* GrayHeaderView.xib */,
 				5880F66B20A3D84F00FA5395 /* Main.storyboard */,
 				5880F67020A3D85000FA5395 /* LaunchScreen.storyboard */,
 				58576FD120B280C8008E569D /* IngredientCell.xib */,
@@ -409,10 +400,7 @@
 				5811F0C420B282A800F50CA9 /* InstructionCell.xib in Resources */,
 				58F8F21D20B3D60900208A05 /* EstimateTimeCell.xib in Resources */,
 				58F8F21B20B30D4A00208A05 /* SelectCuisineCell.xib in Resources */,
-				0140E6C820B0A71100699CE3 /* GrayHeaderView.xib in Resources */,
-				0140E6BC20B06C6D00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */,
 				58576FD220B280C8008E569D /* IngredientCell.xib in Resources */,
-				0140E6B820B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */,
 				5880F66F20A3D85000FA5395 /* Assets.xcassets in Resources */,
 				5880F66D20A3D84F00FA5395 /* Main.storyboard in Resources */,
 				B650975420B6EA0700461584 /* AddStepsCell.xib in Resources */,
@@ -423,9 +411,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0140E6BD20B06C6E00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */,
-				0140E6B920B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */,
-				0140E6C920B0A71100699CE3 /* GrayHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -433,9 +418,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0140E6BE20B06C6E00699CE3 /* AddRecipeInstructionHeaderView.xib in Resources */,
-				0140E6BA20B0682000699CE3 /* AddRecipeIngredientHeaderView.xib in Resources */,
-				0140E6CA20B0A71100699CE3 /* GrayHeaderView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -536,6 +518,7 @@
 				58F8F22920B3D71700208A05 /* AddInstructionCell.swift in Sources */,
 				B6539EE820BAC8BE00E8AFFE /* MTAlert.swift in Sources */,
 				5880F6A520A905F800FA5395 /* AddRecipeController.swift in Sources */,
+				581F76CE20C3EAD000316D81 /* NumberTextView.swift in Sources */,
 				0140E6C020B0717C00699CE3 /* TextEditorController.swift in Sources */,
 				5811F0C820B2831F00F50CA9 /* Recipe.swift in Sources */,
 				58F8F22320B3D6BF00208A05 /* SelectCuisineCell.swift in Sources */,
@@ -546,6 +529,7 @@
 				5880F69620A3DB1800FA5395 /* RecipeListController.swift in Sources */,
 				5811F0C620B282E900F50CA9 /* RecipeViewModel.swift in Sources */,
 				B650975320B6EA0700461584 /* AddStepsCell.swift in Sources */,
+				581F76CC20C3908B00316D81 /* PickerTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -719,11 +703,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GKMXA6U2D;
+				DEVELOPMENT_TEAM = ZK794X9FWS;
 				INFOPLIST_FILE = "$(SRCROOT)/Recipe Keeper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Recipe-Keeper-wei";
+				PRODUCT_BUNDLE_IDENTIFIER = "Recipe-Keeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -736,11 +720,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 8GKMXA6U2D;
+				DEVELOPMENT_TEAM = ZK794X9FWS;
 				INFOPLIST_FILE = "$(SRCROOT)/Recipe Keeper/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "Recipe-Keeper-wei";
+				PRODUCT_BUNDLE_IDENTIFIER = "Recipe-Keeper";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

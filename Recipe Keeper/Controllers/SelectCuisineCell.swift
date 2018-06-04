@@ -31,8 +31,9 @@ class SelectCuisineCell: UITableViewCell, UIPickerViewDelegate, UIPickerViewData
     
     func pickerView( _ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         cuisineType.text = cuisinePickerData[row].rawValue
-        self.endEditing(true)
     }
+    
+    
     
     var cuisine: String? {
         didSet {

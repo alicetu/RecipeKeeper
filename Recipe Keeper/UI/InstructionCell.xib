@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -31,10 +31,10 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YZW-m3-Ewu" userLabel="Content area">
-                                <rect key="frame" x="33.5" y="0.0" width="250" height="43.5"/>
+                                <rect key="frame" x="25" y="0.0" width="323" height="43.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Step Description" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="10" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M1J-bY-haw">
-                                        <rect key="frame" x="10" y="10" width="220" height="23"/>
+                                        <rect key="frame" x="10.5" y="10" width="272.5" height="23"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -42,46 +42,39 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="M1J-bY-haw" secondAttribute="trailing" constant="20" id="4yz-Aw-7wa"/>
+                                    <constraint firstAttribute="trailing" secondItem="M1J-bY-haw" secondAttribute="trailing" constant="40" id="4yz-Aw-7wa"/>
                                     <constraint firstItem="M1J-bY-haw" firstAttribute="leading" secondItem="YZW-m3-Ewu" secondAttribute="leading" constant="10" id="FOI-3e-oM9"/>
                                     <constraint firstAttribute="bottom" secondItem="M1J-bY-haw" secondAttribute="bottom" constant="10" id="ZIS-IE-kWW"/>
                                     <constraint firstItem="M1J-bY-haw" firstAttribute="top" secondItem="YZW-m3-Ewu" secondAttribute="top" constant="10" id="vIG-td-AaO"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-dI-Evu">
-                                <rect key="frame" x="297" y="0.0" width="50" height="43.5"/>
-                                <state key="normal" image="timer"/>
-                                <connections>
-                                    <action selector="startTimer:" destination="7JC-b0-XzC" eventType="touchDown" id="tnx-zg-WLO"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aov-FG-DBp" userLabel="Action area">
-                                <rect key="frame" x="360.5" y="0.0" width="32.5" height="43.5"/>
+                                <rect key="frame" x="353" y="0.0" width="40" height="43.5"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvw-QT-q1s">
-                                        <rect key="frame" x="8" y="8" width="29.5" height="29"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWh-dI-Evu">
+                                        <rect key="frame" x="-0.5" y="1.5" width="40" height="40"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" secondItem="nvw-QT-q1s" secondAttribute="width" multiplier="1:1" id="l1v-MU-FZ7"/>
+                                            <constraint firstAttribute="width" secondItem="aWh-dI-Evu" secondAttribute="height" multiplier="1:1" id="s5R-dc-mEa"/>
                                         </constraints>
-                                        <state key="normal" backgroundImage="Unchecked"/>
-                                        <state key="selected" backgroundImage="Checked"/>
+                                        <state key="normal" image="Timer"/>
                                         <connections>
-                                            <action selector="actionButtonTapped:" destination="7JC-b0-XzC" eventType="touchUpInside" id="9Kr-0w-Has"/>
+                                            <action selector="startTimer:" destination="7JC-b0-XzC" eventType="touchDown" id="tnx-zg-WLO"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="nvw-QT-q1s" firstAttribute="centerX" secondItem="Aov-FG-DBp" secondAttribute="centerX" id="8Zo-dv-Ega"/>
-                                    <constraint firstItem="nvw-QT-q1s" firstAttribute="centerY" secondItem="Aov-FG-DBp" secondAttribute="centerY" id="JG3-45-Cfg"/>
-                                    <constraint firstItem="nvw-QT-q1s" firstAttribute="width" secondItem="Aov-FG-DBp" secondAttribute="width" id="Jhs-Fh-Rg6"/>
+                                    <constraint firstItem="aWh-dI-Evu" firstAttribute="width" secondItem="Aov-FG-DBp" secondAttribute="width" id="UnE-7b-FOs"/>
+                                    <constraint firstItem="aWh-dI-Evu" firstAttribute="centerX" secondItem="Aov-FG-DBp" secondAttribute="centerX" id="hNH-DC-Z1Y"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="40" id="rbY-Cm-mMA"/>
+                                    <constraint firstItem="aWh-dI-Evu" firstAttribute="centerY" secondItem="Aov-FG-DBp" secondAttribute="centerY" id="yGg-rp-9Oy"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <constraints>
                             <constraint firstItem="YZW-m3-Ewu" firstAttribute="leading" secondItem="7Xq-rq-690" secondAttribute="trailing" id="Lkf-ry-cWf"/>
                             <constraint firstItem="Aov-FG-DBp" firstAttribute="height" secondItem="w2h-nm-ulP" secondAttribute="height" id="TCx-ct-Mbu"/>
-                            <constraint firstItem="Aov-FG-DBp" firstAttribute="width" secondItem="w2h-nm-ulP" secondAttribute="width" multiplier="1:12" id="Wc7-WW-RFe"/>
+                            <constraint firstItem="Aov-FG-DBp" firstAttribute="width" secondItem="w2h-nm-ulP" secondAttribute="width" multiplier="1:12" priority="750" id="Wc7-WW-RFe"/>
                             <constraint firstItem="7Xq-rq-690" firstAttribute="leading" secondItem="w2h-nm-ulP" secondAttribute="leading" id="cGQ-ST-f4Y"/>
                             <constraint firstItem="7Xq-rq-690" firstAttribute="height" secondItem="w2h-nm-ulP" secondAttribute="height" id="vHh-RC-ofc"/>
                         </constraints>
@@ -95,7 +88,6 @@
                 </constraints>
             </tableViewCellContentView>
             <connections>
-                <outlet property="Action" destination="nvw-QT-q1s" id="vH0-2f-tr3"/>
                 <outlet property="StepDescription" destination="M1J-bY-haw" id="3FY-ZA-cBi"/>
                 <outlet property="StepTag" destination="7Xq-rq-690" id="SaT-fO-9Dx"/>
                 <outlet property="timer" destination="aWh-dI-Evu" id="f7n-BY-o3j"/>
@@ -104,8 +96,6 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Checked" width="44" height="44"/>
-        <image name="Unchecked" width="44" height="44"/>
-        <image name="timer" width="50" height="50"/>
+        <image name="Timer" width="25" height="25"/>
     </resources>
 </document>

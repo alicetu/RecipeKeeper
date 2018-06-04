@@ -117,20 +117,15 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
                 let buttonAddIngredient = cell.viewWithTag(4) as! UIButton
                 buttonAddIngredient.setTitle(String(indexPath.row), for: .normal)
                 buttonAddIngredient.titleLabel?.layer.opacity = 0.0
-//                if(indexPath.row != 0){
-//                    buttonAddIngredient.tag = indexPath.row
-//                }else{
-//                    buttonAddIngredient.tag = 0
-//                }
                 buttonAddIngredient.removeTarget(nil, action: nil, for: .allEvents)
                 buttonAddIngredient.addTarget(self, action: #selector(AddRecipeController.addIngredientAction(_:)), for: .touchUpInside)
                 let ingredient = cell.viewWithTag(5) as! UILabel
                 if indexPath.row < ingredients.count {
                     ingredient.text = ingredients[indexPath.row]
-                }else{
+                    buttonAddIngredient.isHidden = true
+                } else {
                     ingredient.text = "Tap button to add ingredient"
                 }
-                //print("index path row is\(indexPath.row), count array is \(ingredients.count)")
             
                 return cell
             }
@@ -140,13 +135,13 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
                 let buttonAddInstruction = cell.viewWithTag(6) as! UIButton
                 buttonAddInstruction.setTitle(String(indexPath.row), for: .normal)
                 buttonAddInstruction.titleLabel?.layer.opacity = 0.0
-                //buttonAddInstruction.tag = 0
                 buttonAddInstruction.removeTarget(nil, action: nil, for: .allEvents)
                 buttonAddInstruction.addTarget(self, action: #selector(AddRecipeController.addInstructionAction(_:)), for: .touchUpInside)
                 let instruction = cell.viewWithTag(7) as! UILabel
                 if indexPath.row < instructions.count {
                     instruction.text = instructions[indexPath.row]
-                }else{
+                    buttonAddInstruction.isHidden = true
+                } else {
                     instruction.text = "Tap button to add instruction"
                 }
               
@@ -166,8 +161,8 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
             name = textField.text ?? ""
             if let text = textField.text, text.count > 0 {
                 if !(text.isAlphabetic || text.isAlphaNumeric) {
-                    MTAlert(title: "please enter a vaild name", message: "", preferredStyle: .alert)
-                        .addAction(title: "ok", style: .cancel) { (_) in
+                    MTAlert(title: "Please enter a valid name", message: "", preferredStyle: .alert)
+                        .addAction(title: "Close", style: .cancel) { (_) in
                         }.show()
                 }
             }
@@ -178,7 +173,7 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
                 let array = timeString.split(separator: " ")
                 if array.count > 1, array[1] == "minutes" {
                     time = Int(array[0])
-                } else {
+                } else if array.count > 1 {
                     time = Int(array[0])! * 60
                 }
             } else {
@@ -186,7 +181,6 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
             }
         }
     }
-    
     
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -283,7 +277,7 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
             var time = ""
             let pattern = "\\d*(?=mins)"
             let regular = try! NSRegularExpression(pattern: pattern, options:.caseInsensitive)
-            let results = regular.matches(in: instruction, options: .reportProgress , range: NSMakeRange(0, instruction.characters.count))
+            let results = regular.matches(in: instruction, options: .reportProgress , range: NSMakeRange(0, instruction.count))
             for result in results {
                 let timer = (instruction as NSString).substring(with: result.range)
                 if(timer != ""){
@@ -293,7 +287,7 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
             if(time != ""){
                 let realmInstruction = Step(description: instruction, needTimer: true, timer:Int(time)!)
                 realmInstructions.append(realmInstruction)
-            }else{
+            } else {
                 let realmInstruction = Step(description: instruction, needTimer: false, timer:0)
                 realmInstructions.append(realmInstruction)
             }
@@ -307,11 +301,11 @@ class AddRecipeController: UITableViewController, UITextFieldDelegate {
         }
         
         if(name=="" || time == 0 || cuisine == "" || ingredients.count==0 || instructions.count==0){
-            MTAlert(title: "please provide  all information", message: "", preferredStyle: .alert)
-                .addAction(title: "ok", style: .cancel) { (_) in
+            MTAlert(title: "Please provide  all information", message: "", preferredStyle: .alert)
+                .addAction(title: "Close", style: .cancel) { (_) in
                 }.show()
             return
-        }
+        }  
         
         let recipe = Recipe(name: name!, time: time!, cuisine: cuisine!, ingredients: realmIngredients, instruction: realmInstructions)
         try! realm.write {

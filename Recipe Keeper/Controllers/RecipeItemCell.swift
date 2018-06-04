@@ -21,10 +21,10 @@ class RecipeItemCell: UITableViewCell {
             RecipeTime.text = "\(recipe.time) minutes"
         } else if recipe.time == 60 {
             RecipeTime.text = " 1 hour"
-        } else if recipe.time > 60 && recipe.time % 6 != 0{
-            let hour = Double(recipe.time / 60)
+        } else if recipe.time > 60 && recipe.time % 60 != 0{
+            let hour = Double(recipe.time) / 60.0
             RecipeTime.text = "\(hour) hours"
-        } else if recipe.time > 60 && recipe.time % 6 == 0{
+        } else if recipe.time > 60 && recipe.time % 60 == 0{
             let hour = recipe.time / 60
             RecipeTime.text = "\(hour) hours"
         }
